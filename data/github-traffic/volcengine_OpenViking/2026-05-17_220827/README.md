@@ -1,0 +1,12 @@
+# OpenViking GitHub Traffic Snapshot
+
+- Repo: volcengine/OpenViking
+- Pulled At: 2026-05-17 22:08:33 +0800
+- Source: gh api repos/volcengine/OpenViking/traffic/*
+
+Files:
+- views.json
+- clones.json
+- popular_paths.json
+- referrers.json
+- traffic_snapshot.json

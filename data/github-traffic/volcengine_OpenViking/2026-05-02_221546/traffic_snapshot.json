@@ -1,0 +1,271 @@
+{
+  "pulled_at": "2026-05-02T22:15:53+0800",
+  "repo": "volcengine/OpenViking",
+  "source": "gh api repos/volcengine/OpenViking/traffic/*",
+  "views": {
+    "count": 79698,
+    "uniques": 16123,
+    "views": [
+      {
+        "timestamp": "2026-04-18T00:00:00Z",
+        "count": 4537,
+        "uniques": 1314
+      },
+      {
+        "timestamp": "2026-04-19T00:00:00Z",
+        "count": 4130,
+        "uniques": 1273
+      },
+      {
+        "timestamp": "2026-04-20T00:00:00Z",
+        "count": 8393,
+        "uniques": 2120
+      },
+      {
+        "timestamp": "2026-04-21T00:00:00Z",
+        "count": 7597,
+        "uniques": 2014
+      },
+      {
+        "timestamp": "2026-04-22T00:00:00Z",
+        "count": 8699,
+        "uniques": 2434
+      },
+      {
+        "timestamp": "2026-04-23T00:00:00Z",
+        "count": 7459,
+        "uniques": 2228
+      },
+      {
+        "timestamp": "2026-04-24T00:00:00Z",
+        "count": 6819,
+        "uniques": 1886
+      },
+      {
+        "timestamp": "2026-04-25T00:00:00Z",
+        "count": 4008,
+        "uniques": 1262
+      },
+      {
+        "timestamp": "2026-04-26T00:00:00Z",
+        "count": 3301,
+        "uniques": 1131
+      },
+      {
+        "timestamp": "2026-04-27T00:00:00Z",
+        "count": 6228,
+        "uniques": 1862
+      },
+      {
+        "timestamp": "2026-04-28T00:00:00Z",
+        "count": 5309,
+        "uniques": 1673
+      },
+      {
+        "timestamp": "2026-04-29T00:00:00Z",
+        "count": 5576,
+        "uniques": 1718
+      },
+      {
+        "timestamp": "2026-04-30T00:00:00Z",
+        "count": 5285,
+        "uniques": 1623
+      },
+      {
+        "timestamp": "2026-05-01T00:00:00Z",
+        "count": 2357,
+        "uniques": 936
+      }
+    ]
+  },
+  "clones": {
+    "count": 39495,
+    "uniques": 4909,
+    "clones": [
+      {
+        "timestamp": "2026-04-18T00:00:00Z",
+        "count": 1672,
+        "uniques": 537
+      },
+      {
+        "timestamp": "2026-04-19T00:00:00Z",
+        "count": 991,
+        "uniques": 283
+      },
+      {
+        "timestamp": "2026-04-20T00:00:00Z",
+        "count": 1855,
+        "uniques": 436
+      },
+      {
+        "timestamp": "2026-04-21T00:00:00Z",
+        "count": 5331,
+        "uniques": 473
+      },
+      {
+        "timestamp": "2026-04-22T00:00:00Z",
+        "count": 3424,
+        "uniques": 720
+      },
+      {
+        "timestamp": "2026-04-23T00:00:00Z",
+        "count": 3203,
+        "uniques": 542
+      },
+      {
+        "timestamp": "2026-04-24T00:00:00Z",
+        "count": 4863,
+        "uniques": 567
+      },
+      {
+        "timestamp": "2026-04-25T00:00:00Z",
+        "count": 3070,
+        "uniques": 444
+      },
+      {
+        "timestamp": "2026-04-26T00:00:00Z",
+        "count": 2347,
+        "uniques": 269
+      },
+      {
+        "timestamp": "2026-04-27T00:00:00Z",
+        "count": 3756,
+        "uniques": 507
+      },
+      {
+        "timestamp": "2026-04-28T00:00:00Z",
+        "count": 3801,
+        "uniques": 527
+      },
+      {
+        "timestamp": "2026-04-29T00:00:00Z",
+        "count": 2613,
+        "uniques": 454
+      },
+      {
+        "timestamp": "2026-04-30T00:00:00Z",
+        "count": 1848,
+        "uniques": 335
+      },
+      {
+        "timestamp": "2026-05-01T00:00:00Z",
+        "count": 721,
+        "uniques": 206
+      }
+    ]
+  },
+  "popular_paths": [
+    {
+      "path": "/volcengine/OpenViking",
+      "title": "Overview",
+      "count": 21742,
+      "uniques": 11497
+    },
+    {
+      "path": "/volcengine/OpenViking/blob/main/README_CN.md",
+      "title": "/blob/main/README_CN.md",
+      "count": 6269,
+      "uniques": 3235
+    },
+    {
+      "path": "/volcengine/OpenViking/issues",
+      "title": "/issues",
+      "count": 2104,
+      "uniques": 591
+    },
+    {
+      "path": "/volcengine/OpenViking/tree/main",
+      "title": "/tree/main",
+      "count": 1976,
+      "uniques": 1129
+    },
+    {
+      "path": "/volcengine/OpenViking/blob/main/examples/openclaw-plugin/INSTALL-ZH.md",
+      "title": "/blob/main/examples/openclaw-plugin/INSTALL-ZH.md",
+      "count": 1344,
+      "uniques": 674
+    },
+    {
+      "path": "/volcengine/OpenViking/pulls",
+      "title": "/pulls",
+      "count": 1154,
+      "uniques": 201
+    },
+    {
+      "path": "/volcengine/OpenViking/blob/main/examples/openclaw-plugin/README_CN.md",
+      "title": "/blob/main/examples/openclaw-plugin/README_CN.md",
+      "count": 902,
+      "uniques": 508
+    },
+    {
+      "path": "/volcengine/OpenViking/releases",
+      "title": "/releases",
+      "count": 755,
+      "uniques": 417
+    },
+    {
+      "path": "/volcengine/OpenViking/tree/main/examples",
+      "title": "/tree/main/examples",
+      "count": 753,
+      "uniques": 439
+    },
+    {
+      "path": "/volcengine/OpenViking/tree/main/docs",
+      "title": "/tree/main/docs",
+      "count": 654,
+      "uniques": 400
+    }
+  ],
+  "referrers": [
+    {
+      "referrer": "Google",
+      "count": 14896,
+      "uniques": 5085
+    },
+    {
+      "referrer": "github.com",
+      "count": 10525,
+      "uniques": 2584
+    },
+    {
+      "referrer": "Bing",
+      "count": 2730,
+      "uniques": 668
+    },
+    {
+      "referrer": "t.co",
+      "count": 863,
+      "uniques": 631
+    },
+    {
+      "referrer": "search.brave.com",
+      "count": 453,
+      "uniques": 149
+    },
+    {
+      "referrer": "bytedance.larkoffice.com",
+      "count": 359,
+      "uniques": 77
+    },
+    {
+      "referrer": "doubao.com",
+      "count": 273,
+      "uniques": 33
+    },
+    {
+      "referrer": "Baidu",
+      "count": 201,
+      "uniques": 35
+    },
+    {
+      "referrer": "console.volcengine.com",
+      "count": 175,
+      "uniques": 43
+    },
+    {
+      "referrer": "DuckDuckGo",
+      "count": 164,
+      "uniques": 97
+    }
+  ]
+}
