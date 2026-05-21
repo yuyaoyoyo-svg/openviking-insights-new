@@ -4,7 +4,7 @@
 
 | 资源 | 链接/路径 |
 |------|----------|
-| 飞书多维表格 | https://bytedance.larkoffice.com/base/KJknbcXDJaQfjjs8yAvcnNKKnsg |
+| 飞书多维表格 | 由 `.env` 中的 `LARK_BASE_TOKEN` 生成对应访问链接 |
 | 项目目录 | `/Users/bytedance/openviking_insights` |
 | 主程序 | `main.py` |
 | 运行脚本 | `run_local.sh` |
@@ -20,7 +20,7 @@
 cd /Users/bytedance/openviking_insights
 
 # 2. 运行（替换为你的token）
-./run_local.sh ghp_你的token
+./run_local.sh
 
 # 3. 查看结果
 # 打开飞书表格查看数据
@@ -78,7 +78,7 @@ cd /Users/bytedance/openviking_insights
 
 ```bash
 # 运行完整采集
-./run_local.sh ghp_你的token
+./run_local.sh
 
 # 手动运行
 export GITHUB_TOKEN="ghp_你的token"
@@ -169,7 +169,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # 2. 运行采集 (1分钟)
 cd /Users/bytedance/openviking_insights
-./run_local.sh ghp_你的token
+./run_local.sh
 
 # 3. 查看数据 (1分钟)
 # 打开飞书表格

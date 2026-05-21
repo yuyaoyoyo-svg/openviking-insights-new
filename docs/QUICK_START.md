@@ -56,7 +56,7 @@ python3 main.py
 ### 步骤 4: 查看结果
 
 1. **查看飞书多维表格**:
-   - 打开: https://bytedance.larkoffice.com/base/KJknbcXDJaQfjjs8yAvcnNKKnsg
+   - 打开由 `.env` 中 `LARK_BASE_TOKEN` 对应的飞书链接
    - 查看采集到的项目数据
 
 2. **查看本地数据文件**:
@@ -114,7 +114,7 @@ python3 main.py
 
 ### 飞书多维表格
 
-**访问地址**: https://bytedance.larkoffice.com/base/KJknbcXDJaQfjjs8yAvcnNKKnsg
+**访问地址**: 由 `.env` 中的 `LARK_BASE_TOKEN` 决定
 
 **包含的数据字段**:
 - 项目名称、项目标识

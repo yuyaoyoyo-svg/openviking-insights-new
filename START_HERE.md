@@ -20,7 +20,7 @@
 cd /Users/bytedance/openviking_insights
 
 # 运行采集
-./run_local.sh ghp_你的token
+./run_local.sh
 ```
 
 等待运行完成，你会看到:
@@ -39,7 +39,7 @@ cd /Users/bytedance/openviking_insights
 
 打开飞书多维表格:
 
-**🔗 https://bytedance.larkoffice.com/base/KJknbcXDJaQfjjs8yAvcnNKKnsg**
+**🔗 打开 `.env` 对应的飞书多维表格链接**
 
 查看:
 - ✅ OpenViking 项目数据
@@ -81,12 +81,12 @@ cd /Users/bytedance/openviking_insights
 
 ```bash
 cd /Users/bytedance/openviking_insights
-./run_local.sh ghp_你的token
+./run_local.sh
 ```
 
 ### 查看数据
 随时打开飞书表格查看:
-https://bytedance.larkoffice.com/base/KJknbcXDJaQfjjs8yAvcnNKKnsg
+飞书多维表格链接由 `.env` 中的 `LARK_BASE_TOKEN` 决定
 
 ---
 
@@ -135,11 +135,11 @@ A: 确认已登录飞书账号，检查网络连接
 
 2. **运行系统** (1分钟)
    ```bash
-   ./run_local.sh ghp_你的token
+   ./run_local.sh
    ```
 
 3. **查看数据** (1分钟)
-   https://bytedance.larkoffice.com/base/KJknbcXDJaQfjjs8yAvcnNKKnsg
+   飞书多维表格链接由 `.env` 中的 `LARK_BASE_TOKEN` 决定
 
 **总计: 5 分钟！** 🚀
 

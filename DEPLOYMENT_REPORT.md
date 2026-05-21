@@ -46,9 +46,9 @@
 
 **配置信息**:
 - 表格名称: "OpenViking 项目洞察看板"
-- Base Token: `KJknbcXDJaQfjjs8yAvcnNKKnsg`
-- Table ID: `tbla5rlIN8S6miy5`
-- 访问链接: https://bytedance.larkoffice.com/base/KJknbcXDJaQfjjs8yAvcnNKKnsg
+- Base Token: 已迁移到 `.env` 的 `LARK_BASE_TOKEN`
+- Table ID: 已迁移到 `.env` 的 `LARK_TABLE_ID`
+- 访问链接: 由 `.env` 中的 `LARK_BASE_TOKEN` 生成
 
 **代码文件**:
 - `src/lark_sync.py` (280 行)
@@ -198,7 +198,7 @@
 
 ```bash
 cd /Users/bytedance/openviking_insights
-./run_local.sh ghp_你的token
+./run_local.sh
 ```
 
 ### 方式 2: 直接运行
@@ -317,10 +317,10 @@ python3 main.py
 
 # 2. 运行采集
 cd /Users/bytedance/openviking_insights
-./run_local.sh ghp_你的token
+./run_local.sh
 
 # 3. 查看数据
-# 打开: https://bytedance.larkoffice.com/base/KJknbcXDJaQfjjs8yAvcnNKKnsg
+# 打开由 `.env` 中 `LARK_BASE_TOKEN` 对应的飞书链接
 ```
 
 ### 完成后你将拥有:

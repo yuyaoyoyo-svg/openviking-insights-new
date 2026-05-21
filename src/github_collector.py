@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any
 import time
 import logging
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -97,6 +98,38 @@ class GitHubCollector:
             }
         return {}
 
+    def _get_last_page_count(self, response: requests.Response) -> int:
+        """通过分页 Link 头估算总条数。"""
+        link = response.headers.get("Link", "")
+        match = re.search(r'[?&]page=(\d+)>; rel="last"', link)
+        if match:
+            return int(match.group(1))
+        return len(response.json())
+
+    def get_open_prs_count(self, owner: str, repo: str) -> int:
+        """获取打开中的 PR 数量。"""
+        url = f"{self.BASE_URL}/repos/{owner}/{repo}/pulls?state=open&per_page=1"
+        response = self._make_request(url)
+        if not response:
+            return 0
+        return self._get_last_page_count(response)
+
+    def get_open_issues_count(self, owner: str, repo: str) -> int:
+        """获取打开中的 Issue 数量，不包含 PR。"""
+        url = f"{self.BASE_URL}/search/issues?q=repo:{owner}/{repo}+type:issue+state:open"
+        response = self._make_request(url)
+        if not response:
+            return 0
+        return response.json().get("total_count", 0)
+
+    def get_contributors_count(self, owner: str, repo: str) -> int:
+        """获取贡献者数量。"""
+        url = f"{self.BASE_URL}/repos/{owner}/{repo}/contributors?per_page=1&anon=false"
+        response = self._make_request(url)
+        if not response:
+            return 0
+        return self._get_last_page_count(response)
+
     def collect_basic_metrics(self, owner: str, repo: str) -> Dict:
         """采集基础指标"""
         logger.info(f"Collecting basic metrics for {owner}/{repo}")
@@ -107,11 +140,15 @@ class GitHubCollector:
             logger.warning(f"Failed to get repository info for {owner}/{repo}")
             return {}
 
+        open_prs = self.get_open_prs_count(owner, repo)
+        open_issues = self.get_open_issues_count(owner, repo)
+        contributors_count = self.get_contributors_count(owner, repo)
+
         # 计算社区活力评分 (0-100)
         vitality_score = min(
             100,
             (
-                min(40, info.get("open_issues", 0) * 0.5)
+                min(40, open_issues * 0.5)
                 + min(30, info.get("forks", 0) * 0.1)
                 + min(30, info.get("watchers", 0) * 0.1)
             ),
@@ -135,8 +172,10 @@ class GitHubCollector:
             "description": info.get("description", ""),
             "stars": info.get("stars", 0),
             "forks": info.get("forks", 0),
-            "open_issues": info.get("open_issues", 0),
+            "open_issues": open_issues,
+            "open_prs": open_prs,
             "watchers": info.get("watchers", 0),
+            "contributors_count": contributors_count,
             "size_kb": info.get("size", 0),
             "language": info.get("language", ""),
             "license": info.get("license", ""),
@@ -144,6 +183,7 @@ class GitHubCollector:
             "created_at": info.get("created_at", ""),
             "updated_at": info.get("updated_at", ""),
             "pushed_at": info.get("pushed_at", ""),
+            "github_url": f"https://github.com/{owner}/{repo}",
             "vitality_score": round(vitality_score, 1),
             "influence_score": round(influence_score, 1),
             "collected_at": datetime.now().isoformat(),

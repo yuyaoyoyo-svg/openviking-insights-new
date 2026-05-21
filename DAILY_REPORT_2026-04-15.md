@@ -80,7 +80,7 @@
 
 - **原始数据**: `data/insights_2026-04-15.json`
 - **校准分析**: `data/calibrated_2026-04-15.json`
-- **飞书表格**: https://bytedance.larkoffice.com/base/KJknbcXDJaQfjjs8yAvcnNKKnsg
+- **飞书表格**: 访问链接由 `.env` 中的 `LARK_BASE_TOKEN` 决定
 
 ---
 

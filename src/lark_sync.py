@@ -4,49 +4,56 @@
 
 import json
 import logging
+import os
 from datetime import datetime
-from typing import Dict, List
+from typing import Dict
 import subprocess
 
+from env_utils import load_env_file
+
 logger = logging.getLogger(__name__)
+
+load_env_file()
 
 
 class LarkSync:
     """飞书数据同步器"""
 
     def __init__(self, base_token: str = None, table_id: str = None):
-        self.base_token = base_token or "KJknbcXDJaQfjjs8yAvcnNKKnsg"
-        self.table_id = table_id or "tbla5rlIN8S6miy5"
+        self.base_token = base_token or os.getenv("LARK_BASE_TOKEN")
+        self.table_id = table_id or os.getenv("LARK_TABLE_ID")
 
     def sync_project_data(self, metrics: Dict) -> bool:
         """同步单个项目数据到飞书"""
         try:
+            if not self.base_token or not self.table_id:
+                logger.error("缺少飞书配置，请检查 .env 中的 LARK_BASE_TOKEN 和 LARK_TABLE_ID")
+                return False
+
             # 构建字段映射
             fields = {
-                "项目名称": metrics.get("name", ""),
-                "项目标识": f"{metrics.get('owner', '')}/{metrics.get('repo', '')}",
-                "数据日期": datetime.now().strftime("%Y-%m-%d"),
-                "项目分类": "自我" if metrics.get("type") == "self" else "同类对标",
+                "仓库名称": metrics.get("name", ""),
+                "仓库全名": metrics.get(
+                    "full_name", f"{metrics.get('owner', '')}/{metrics.get('repo', '')}"
+                ),
+                "生态位层级": metrics.get("ecosystem_tier", "更广义Agent生态位"),
+                "项目类型": "OpenViking" if metrics.get("type") == "self" else "Peer",
+                "日期": datetime.now().strftime("%Y-%m-%d"),
                 "Stars": metrics.get("stars", 0),
                 "Forks": metrics.get("forks", 0),
+                "Open PRs": metrics.get("open_prs", 0),
                 "Open Issues": metrics.get("open_issues", 0),
-                "Closed Issues": 0,  # 简化版
-                "Open PRs": 0,  # 简化版
-                "Closed PRs": 0,  # 简化版
-                "Contributors": 0,  # 简化版
                 "Watchers": metrics.get("watchers", 0),
-                "Size (KB)": metrics.get("size_kb", 0),
-                "Recent Commits": 0,  # 简化版
+                "Contributors": metrics.get("contributors_count", 0),
                 "社区活力评分": metrics.get("vitality_score", 0),
                 "外部影响力评分": metrics.get("influence_score", 0),
-                "自我基准对比": "-",  # 简化版
-                "同类对标分位数": 0,  # 简化版
-                "项目阶段阈值": "-",  # 简化版
-                "数据来源": "GitHub API",
+                "综合健康度": metrics.get("overall_health_score", 0),
+                "社区互动总量": metrics.get("community_engagement_total", 0),
+                "外部吸引力指数(log+加权)": metrics.get("external_attraction_index", 0),
+                "语言": metrics.get("language", ""),
+                "最后推送时间": metrics.get("pushed_at", ""),
+                "GitHub链接": metrics.get("github_url", ""),
             }
-
-            # 构建记录数据
-            record = {"fields": fields}
 
             # 使用 lark-cli 命令行工具插入数据
             cmd = [
@@ -57,8 +64,8 @@ class LarkSync:
                 self.base_token,
                 "--table-id",
                 self.table_id,
-                "--records",
-                json.dumps({"records": [record]}, ensure_ascii=False),
+                "--json",
+                json.dumps({"fields": list(fields.keys()), "rows": [[fields[k] for k in fields]]}, ensure_ascii=False),
             ]
 
             result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)

@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.DS_Store
+logs/
+data/github-traffic/
+data/insights_*.json
+data/calibrated_*.json
+*.plist

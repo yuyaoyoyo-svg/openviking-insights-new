@@ -5,6 +5,7 @@
       "owner": "volcengine",
       "repo": "OpenViking",
       "type": "self",
+      "ecosystem_tier": "OpenViking同生态位",
       "package_name": "openviking"
     },
     {
@@ -12,6 +13,7 @@
       "owner": "NevaMind-AI",
       "repo": "memU",
       "type": "peer",
+      "ecosystem_tier": "OpenViking同生态位",
       "package_name": ""
     },
     {
@@ -19,6 +21,7 @@
       "owner": "lancedb",
       "repo": "lancedb",
       "type": "peer",
+      "ecosystem_tier": "OpenViking同生态位",
       "package_name": "lancedb"
     },
     {
@@ -26,6 +29,7 @@
       "owner": "tobi",
       "repo": "qmd",
       "type": "peer",
+      "ecosystem_tier": "OpenViking同生态位",
       "package_name": ""
     },
     {
@@ -33,6 +37,7 @@
       "owner": "mem0ai",
       "repo": "mem0",
       "type": "peer",
+      "ecosystem_tier": "OpenViking同生态位",
       "package_name": "mem0ai"
     },
     {
@@ -40,6 +45,7 @@
       "owner": "LycheeMem",
       "repo": "LycheeMem",
       "type": "peer",
+      "ecosystem_tier": "OpenViking同生态位",
       "package_name": ""
     },
     {
@@ -47,6 +53,7 @@
       "owner": "zjunlp",
       "repo": "LightMem",
       "type": "peer",
+      "ecosystem_tier": "OpenViking同生态位",
       "package_name": ""
     },
     {
@@ -54,6 +61,7 @@
       "owner": "agentscope-ai",
       "repo": "ReMe",
       "type": "peer",
+      "ecosystem_tier": "OpenViking同生态位",
       "package_name": ""
     },
     {
@@ -61,6 +69,7 @@
       "owner": "supermemoryai",
       "repo": "supermemory",
       "type": "peer",
+      "ecosystem_tier": "OpenViking同生态位",
       "package_name": ""
     },
     {
@@ -68,6 +77,7 @@
       "owner": "openclaw",
       "repo": "openclaw",
       "type": "peer",
+      "ecosystem_tier": "更广义Agent生态位",
       "package_name": ""
     },
     {
@@ -75,6 +85,7 @@
       "owner": "NousResearch",
       "repo": "hermes-agent",
       "type": "peer",
+      "ecosystem_tier": "更广义Agent生态位",
       "package_name": ""
     },
     {
@@ -82,10 +93,8 @@
       "owner": "bytedance",
       "repo": "deer-flow",
       "type": "peer",
+      "ecosystem_tier": "更广义Agent生态位",
       "package_name": ""
     }
-  ],
-  "github_token": "",
-  "lark_base_token": "KJknbcXDJaQfjjs8yAvcnNKKnsg",
-  "lark_table_id": "tbla5rlIN8S6miy5"
+  ]
 }
